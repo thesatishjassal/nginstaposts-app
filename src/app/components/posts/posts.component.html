@@ -1,0 +1,35 @@
+<div class="card mb-3 border-secondary">
+    <a [href]="posts.uid" target="_blank">
+      <img
+        [src]="posts.picture"
+        height="500"
+        width="auto"
+        class="card-img-top img-fluid"
+      />
+    </a>
+    <div class="card-body">
+      <h5 class="card-title text-primary text-uppercase">
+        {{ posts.locationName }}
+      </h5>
+      <p class="card-text">{{ posts.description }}</p>
+      <p class="card-text">
+        <small class="text-muted">by:- {{ posts.firstName }}</small>
+      </p>
+    </div>
+    <div
+      class="card-footer bg-transparent border-secondary d-flex 
+      justify-content-around align-content-center">
+      <div (click)="upvotePost()" class="text-primary">
+        <i class="fas fa-thumbs-up" size="lg" primaryColor="blue"></i>
+        {{ upvote }}
+      </div>
+      <div (click)="DownvotePost()" class="text-secondary">
+        <i class="fas fa-thumbs-down" size="lg" primaryColor="blue"></i>
+        {{ downvote }}
+      </div>
+      <a [href]="getInstaUrl()" target="_blank" class="text-primary">
+        <i class="fas fa-share-alt" size="lg" primaryColor="blue"></i>
+      </a>
+    </div>
+  </div>
+  
